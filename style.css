@@ -40,6 +40,12 @@ body{
     margin: 10px;
 }
 
+.error{
+    color: #fff;
+    background: red;
+    display: none;
+    
+}
 
 .card_cadastro button{
     border-radius: 10px;
@@ -50,5 +56,17 @@ body{
     color: #fff;
     cursor: pointer;
     text-transform: uppercase;
+}
+
+#icon{
+    position: absolute;
+    top: 50%;
+    right: 50px;
+    transform: translateY(520%);
+    background-image: url(./assets/show.png);
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+
 }
 

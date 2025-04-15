@@ -12,13 +12,17 @@
 </head>
 
 <body>
-    <form class="card_cadastro">
+    <form name="formuser"class="card_cadastro">
         <h2>Cadastro</h2>
         <label for="name">Nome:</label>
-        <input maxlength="99" minlength="3" type="text" placeholder="Nome Completo" id="nome" required>
+        <input type="text" name="nome" placeholder="Nome completo">
+        <div class="error">Nome Completo é obrigatório</div>
+        <div class="error">Nome inválido</div>
 
-        <label for="e-mail">E-mail:</label>
-        <input type="e-mail" placeholder="E-mail" required>
+        <label for="email">E-mail:</label>
+        <input type="email" name="email" id="email"  placeholder="seu@email.com" onchange="onChangeEmail()" >
+        <div class="error" id="email-required-error">Email é obrigatório</div>
+        <div class="error">Email é inválido</div>
 
         <label for="sexo">Sexo:</label>
         <label>
@@ -28,16 +32,17 @@
         </label>
 
         <label for="password">Senha</label>
-        <input type="password" placeholder="Password" required>
+        <input maxlength="10" minlength="5" type="password" name="password" id="password" placeholder="Senha" onchange="onChangePassword()">
+        <input type="password" name="rep_senha" placeholder="Confirmar a senha">
+        <div class="error">Senha é obrigatório</div>
+        
 
-        <button onclick="abrirAlerta()">Cadastrar</button>
-        <script>
-            function abrirAlerta(){
-                alert("Cadastro efetuado com sucesso!")
-            }
-        </script>
+        <button onclick="return validar()">Cadastrar</button>
+        
     </form>
-
+    
+    
+    <script src="./script.js"></script>
 </body>
 
 
